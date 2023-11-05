@@ -1,0 +1,16 @@
+.button {
+  padding: 0.5rem 1rem;
+  min-width: 100px;
+  background-color: #00acee;
+  border: none;
+  border-radius: 0.5rem;
+
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.button:not(:last-child) {
+  margin-right: 1rem;
+}

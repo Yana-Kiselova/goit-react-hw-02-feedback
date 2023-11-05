@@ -1,10 +1,10 @@
-import { Component } from 'react';
+import React from 'react';
 import { Feedback } from './Feedback/Feedback';
 import { Statistics } from './Statistics/Statistics';
 import { Section } from './Section/Section';
 import { Notification } from './Notification/Notification';
 
-export class App extends Component {
+export class App extends React.Component {
   state = {
     good: 0,
     neutral: 0,
@@ -20,7 +20,6 @@ export class App extends Component {
   };
 
   countTotalFeedback = () => {
-    console.log(this.state);
     return this.state.good + this.state.neutral + this.state.bad;
   };
 
@@ -43,12 +42,14 @@ export class App extends Component {
               good={good}
               neutral={neutral}
               bad={bad}
-              total={this.countTotalFeedback()}
+              total={total}
               positive={this.countPositiveFeedbackPercentage()}
             />
           </Section>
         ) : (
-          <Notification message={'There is no feedback'}></Notification>
+          <Section>
+            <Notification message={'There is no feedback'}></Notification>
+          </Section>
         )}
       </>
     );
